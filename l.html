@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header-stuck">
+        <nav class="navbar">
+            <div class="nav-logo">Portofolio</div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <div class="social-media-top">
+    <!-- LINKEDIN (Ganti dengan username/id LinkedIn kamu) -->
+    <a href="https://www.linkedin.com/in/ilham-wicaksono-39b150333?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-icon">
+        <i class="fa-brands fa-linkedin"></i>
+    </a>
+    
+    <!-- GITHUB (Ganti dengan username GitHub kamu) -->
+    <a href="https://github.com/ilhamadiwicaksono" target="_blank" class="social-icon">
+        <i class="fa-brands fa-square-github"></i>
+    </a>
+    
+    <!-- INSTAGRAM (Ganti dengan username Instagram kamu) -->
+    <a href="https://www.instagram.com/ilhham.w?igsh=MWYxNWJ0bjJyMWh6Yg==" target="_blank" class="social-icon">
+        <i class="fa-brands fa-square-instagram"></i>
+    </a>
+</div>
+
+    <div class="nav-dropdown" id="navDropdown">
+        <a href="#" class="menu-item" data-target="home">Home</a>
+        <a href="#" class="menu-item" data-target="about">About</a>
+        <a href="#" class="menu-item" data-target="project">Project</a>
+        <a href="#" class="menu-item" data-target="contact">Contact</a>
+    </div>
+
+    <main class="main-container">
+        
+        <section id="home" class="page-sheet active">
+            <div class="photo-section">
+                <img src="assets/meee.png" alt="Foto Profil" class="profile-img">
+            </div>
+
+            <div class="dynamic-text-box">
+                <h2>Ilham Adi Wicaksono</h2>
+                <h3>Saya <span id="changing-text" class="text-animation"></span></h3>
+            </div>
+
+            <div class="about-short">
+                <p>Saya adalah seorang mahasiswa Sistem Informasi yang mandiri, pekerja keras, dan selalu bersemangat mempelajari hal baru. Latar belakang akademis saya berfokus pada pengolahan data analitik dan pengembangan aplikasi, sementara pengalaman operasional saya di lapangan melatih saya untuk tetap tenang dan solutif di bawah tekanan. Siap membawa dedikasi dan keahlian digital ini ke tingkat profesional</p>
+            </div>
+
+            <div class="button-section">
+                <a href="#" class="action-btn menu-item" data-target="project">Lihat Project</a>
+                <a href="cv.pdf" class="action-btn" download>Download CV</a>
+                <a href="#" class="action-btn menu-item" data-target="contact">Contact Me</a>
+                
+                <div class="social-media">
+                    <!-- LINKEDIN (Ganti dengan username/id LinkedIn kamu) -->
+    <a href="https://www.linkedin.com/in/ilham-wicaksono-39b150333?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-icon">
+        <i class="fa-brands fa-linkedin"></i>
+    </a>
+    
+    <!-- GITHUB (Ganti dengan username GitHub kamu) -->
+    <a href="https://github.com/ilhamadiwicaksono" target="_blank" class="social-icon">
+        <i class="fa-brands fa-square-github"></i>
+    </a>
+    
+    <!-- INSTAGRAM (Ganti dengan username Instagram kamu) -->
+    <a href="https://www.instagram.com/ilhham.w?igsh=MWYxNWJ0bjJyMWh6Yg==" target="_blank" class="social-icon">
+        <i class="fa-brands fa-square-instagram"></i>
+    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="page-sheet">
+    <div class="about-container-scroll">
+        
+        <div class="about-block">
+            <h2>Education</h2>
+            <div class="info-card">
+                <h3>Universitas Pamulang Serang</h3>
+                <span class="info-meta">Sistem Informasi | Februari 2024 - Sekarang</span>
+                <p>Mempelajari implementasi teknologi, analisis proses bisnis, dan manajemen sistem informasi.</p>
+            </div>
+            <div class="info-card">
+                <h3>SMK Insan Mulya</h3>
+                <span class="info-meta">Akuntansi | 2020 - 2023</span>
+                <p>Mempelajari dasar-dasar teknologi, administrasi komputer, dan keahlian umum kejuruan.</p>
+            </div>
+        </div>
+
+        <div class="about-block">
+            <h2>Skills</h2>
+            <ul class="skills-list-vertical">
+                <li><i class="fa-solid fa-circle-check"></i> Strong troubleshooting and problem-solving skills</li>
+                <li><i class="fa-solid fa-circle-check"></i> Proficient in Windows Server administration</li>
+                <li><i class="fa-solid fa-circle-check"></i> Experienced ERP Security Specialist</li>
+                <li><i class="fa-solid fa-circle-check"></i> Familiar in Information Security Analyst</li>
+                <li><i class="fa-solid fa-circle-check"></i> Intermediate English Skills</li>
+            </ul>
+        </div>
+
+        <div class="about-block">
+            <h2>Tools</h2>
+            <div class="tools-grid-layout">
+                
+                <div class="tool-card">
+                    <i class="fa-brands fa-html5 tool-icon-img" style="color: #e34c26;"></i>
+                    <span>HTML</span>
+                </div>
+
+                <div class="tool-card">
+                    <i class="fa-brands fa-css3-alt tool-icon-img" style="color: #264de4;"></i>
+                    <span>CSS</span>
+                </div>
+
+                <div class="tool-card">
+                    <i class="fa-brands fa-js tool-icon-img" style="color: #f7df1e;"></i>
+                    <span>JavaScript</span>
+                </div>
+
+                <div class="tool-card">
+                    <i class="fa-solid fa-bullseye tool-icon-img" style="color: #02569B;"></i>
+                    <span>Dart</span>
+                </div>
+
+                <div class="tool-card">
+                    <i class="fa-brands fa-java tool-icon-img" style="color: #f89820;"></i>
+                    <span>Java</span>
+                </div>
+
+                <div class="tool-card">
+                    <i class="fa-brands fa-windows tool-icon-img" style="color: #0078d4;"></i>
+                    <span>Windows User</span>
+                </div>
+
+                <div class="tool-card">
+                    <i class="fa-brands fa-python tool-icon-img" style="color: #3776ab;"></i>
+                    <span>Python</span>
+                </div>
+
+                <div class="tool-card">
+                    <i class="fa-solid fa-cubes tool-icon-img" style="color: #714B67;"></i>
+                    <span>Odoo ERP</span>
+                </div>
+
+                <div class="tool-card">
+                    <i class="fa-brands fa-linux tool-icon-img" style="color: #000000;"></i>
+                    <span>Linux</span>
+                </div>
+
+                <div class="tool-card">
+                    <i class="fa-brands fa-php tool-icon-img" style="color: #777bb4;"></i>
+                    <span>PHP</span>
+                </div>
+
+                <div class="tool-card">
+                    <i class="fa-solid fa-network-wired tool-icon-img" style="color: #125430;"></i>
+                    <span>Cisco</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="about-block certificate-section">
+            <h2>Certificates</h2>
+            <p class="section-desc">Berikut adalah sertifikat kelas singkat yang saya miliki:</p>
+            
+            <div class="certificate-container">
+                
+                <div class="cert-item-box" style="margin-bottom: 25px;">
+                    <i class="fa-solid fa-file-pdf" style="color: #dc3545; font-size: 1.3rem;"></i>
+                    <h4>Sertifikat 1 (PDF)</h4>
+                    <embed src="assets/sertif1.pdf" type="application/pdf" class="cert-pdf-view">
+                </div>
+
+                <div class="cert-item-box" style="margin-bottom: 25px;">
+                    <i class="fa-solid fa-file-pdf" style="color: #dc3545; font-size: 1.3rem;"></i>
+                    <h4>Sertifikat 2 (PDF)</h4>
+                    <embed src="assets/sertif2.pdf" type="application/pdf" class="cert-pdf-view">
+                </div>
+
+                <div class="cert-item-box" style="margin-bottom: 25px;">
+                    <i class="fa-solid fa-file-pdf" style="color: #dc3545; font-size: 1.3rem;"></i>
+                    <h4>Sertifikat 3 (PDF)</h4>
+                    <embed src="assets/sertif3.pdf" type="application/pdf" class="cert-pdf-view">
+                </div>
+
+                <div class="cert-item-box" style="margin-bottom: 25px;">
+                    <i class="fa-solid fa-file-pdf" style="color: #dc3545; font-size: 1.3rem;"></i>
+                    <h4>Sertifikat 4 (PDF)</h4>
+                    <embed src="assets/sertif4.pdf" type="application/pdf" class="cert-pdf-view">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="about-block">
+            <h2>Experience</h2>
+            
+            <div class="info-card experience-card-flex">
+                <img src="assets/lalamove.png" alt="Logo Lalamove" class="company-logo">
+                
+                <div class="experience-detail">
+                    <h3>Mitra Driver</h3>
+                    <span class="info-meta">Lalamove Indonesia | < 3 Bulan</span>
+                    <p>Bertanggung jawab dalam manajemen logistik pengiriman barang secara tepat waktu, memastikan keamanan paket konsumen, serta mengoptimalkan rute perjalanan harian secara efisien melalui aplikasi.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+        <section id="project" class="page-sheet">
+    <div class="project-container-scroll">
+        <h2 class="project-main-title">My Projects</h2>
+
+        <a href="https://youtu.be/S-KbEgSxrNA?si=AwRUnCfE8yDv6_zY" target="_blank" class="project-card-link">
+            <div class="project-card">
+                <img src="assets/knime2.png" alt="Data Cleansing Jakarta-London" class="project-banner-img">
+                <div class="project-info">
+                    <h3>Data Collecting, Blending, & Cleansing</h3>
+                    <span class="project-tech">KNIME | Microsoft Excel</span>
+                    <p>Proses integrasi dan pembersihan data mentah (cleansing) dengan studi kasus rute penerbangan Jakarta menuju London untuk menghasilkan data yang siap dianalisis.</p>
+                    <span class="watch-badge"><i class="fa-brands fa-youtube"></i> Watch on YouTube</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://youtu.be/4RGsu6-UEAs?si=h-Txl1sqIosrtp16" target="_blank" class="project-card-link">
+            <div class="project-card">
+                <img src="assets/orange2.png" alt="Data Mining Naive Bayes" class="project-banner-img">
+                <div class="project-info">
+                    <h3>Data Mining & Analytics (Naive Bayes)</h3>
+                    <span class="project-tech">Python | Orange Data Mining</span>
+                    <p>Kelanjutan dari proses data cleansing yang diimplementasikan ke dalam algoritma klasifikasi Naive Bayes guna melakukan pemodelan data mining yang akurat.</p>
+                    <span class="watch-badge"><i class="fa-brands fa-youtube"></i> Watch on YouTube</span>
+                </div>
+            </div>
+        </a>
+
+        <div class="project-card no-link-card">
+            <img src="assets/flutter.png" alt="Aplikasi Ngaji Digital" class="project-banner-img">
+            <div class="project-info">
+                <h3>Aplikasi Mobile Ngaji Digital</h3>
+                <span class="project-tech">Flutter | Dart</span>
+                <p>Pengembangan aplikasi kitab kuning digital berbasis mobile untuk mempermudah umat muslim membaca mushaf secara praktis, simpel, dan efisien saat bepergian melalui smartphone.</p>
+                <span class="tech-badge-only"><i class="fa-solid fa-code"></i> Mobile App Development</span>
+            </div>
+        </div>
+
+        <a href="https://youtu.be/4Wpdjf2pEX0?si=gETssyBthN-yjPJG" target="_blank" class="project-card-link">
+            <div class="project-card">
+                <img src="assets/odoo2.png" alt="Implementasi Odoo ERP" class="project-banner-img">
+                <div class="project-info">
+                    <h3>Implementasi Odoo ERP Module Purchase</h3>
+                    <span class="project-tech">Odoo ERP | Enterprise System</span>
+                    <p>Konfigurasi dan implementasi sistem ERP pada modul Pembelian (Purchase) untuk mengoptimalkan manajemen vendor, otomatisasi purchase order, dan efisiensi rantai pasok bisnis.</p>
+                    <span class="watch-badge"><i class="fa-brands fa-youtube"></i> Watch on YouTube</span>
+                </div>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+        <!-- LEMBARAN 4: CONTACT -->
+<!-- LEMBARAN 4: CONTACT -->
+<section id="contact" class="page-sheet">
+    <div class="contact-container-scroll">
+        
+        <!-- 1. HEADLINE UTAMA -->
+        <div class="contact-header">
+            <h2 class="contact-title-large">Contact</h2>
+            <p class="contact-subtitle-small">Let's work together.</p>
+        </div>
+
+        <hr class="contact-divider">
+
+        <!-- 2. CONTACT INFO (SUDAH JADI LINK LANGSUNG BUKA APLIKASI) -->
+        <div class="contact-info-section">
+            <h3 class="info-title-large">Contact Info</h3>
+            <p class="info-subtitle-small">Interested with me?</p>
+            
+            <div class="info-list-box">
+                <!-- Domisili (Tetap teks biasa karena tidak perlu link) -->
+                <div class="info-item-static">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="info-text-flex">
+                        <span>Domisili</span>
+                        <strong>Serang, Banten</strong>
+                    </div>
+                </div>
+
+                <!-- Kontak WA / HP (Ganti nomor 6281234567890 dengan nomor aslimu) -->
+                <a href="https://wa.me/6281234567890" target="_blank" class="info-item-link">
+                    <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
+                    <div class="info-text-flex">
+                        <span>WhatsApp / HP</span>
+                        <strong>081234567890 <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem; color: #a0aec0; margin-left: 3px;"></i></strong>
+                    </div>
+                </a>
+
+                <!-- Email (Ganti emailkamu@domain.com dengan email aslimu) -->
+                <a href="ilhamadiwicaksono29@gmail.com" class="info-item-link">
+                    <i class="fa-solid fa-envelope" style="color: #ea4335;"></i>
+                    <div class="info-text-flex">
+                        <span>Email</span>
+                        <strong>ilhamadiwicaksono29@gmail.com <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem; color: #a0aec0; margin-left: 3px;"></i></strong>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- 3. SOCIAL MEDIA CHANNELS -->
+        <div class="contact-social-section">
+            <h3 class="social-title-section">Social Media</h3>
+            
+            <div class="social-links-container">
+                <!-- GITHUB -->
+                <a href="https://github.com/ilhamadiwicaksono" target="_blank" class="social-box-item">
+                    <div class="social-box-left">
+                        <i class="fa-brands fa-github"></i>
+                        <span>GitHub</span>
+                    </div>
+                    <strong class="social-username">ilhamadiwicaksono <i class="fa-solid fa-arrow-up-right-from-square"></i></strong>
+                </a>
+
+                <!-- LINKEDIN -->
+                <a href="https://www.linkedin.com/in/ilham-wicaksono-39b150333?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-box-item">
+                    <div class="social-box-left">
+                        <i class="fa-brands fa-linkedin" style="color: #0077b5;"></i>
+                        <span>LinkedIn</span>
+                    </div>
+                    <strong class="social-username">ilham-wicaksono <i class="fa-solid fa-arrow-up-right-from-square"></i></strong>
+                </a>
+
+                <!-- INSTAGRAM -->
+                <a href="https://www.instagram.com/ilhham.w?igsh=MWYxNWJ0bjJyMWh6Yg==" target="_blank" class="social-box-item">
+                    <div class="social-box-item-inner">
+                        <div class="social-box-left">
+                            <i class="fa-brands fa-instagram" style="color: #e1306c;"></i>
+                            <span>Instagram</span>
+                        </div>
+                        <strong class="social-username">ilham.w <i class="fa-solid fa-arrow-up-right-from-square"></i></strong>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

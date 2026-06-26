@@ -1,0 +1,782 @@
+/* ========================================================
+   1. RESET & ATURAN DASAR WEBSITE
+   ======================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding-top: 110px; /* Jarak agar konten tidak tertutup header atas */
+    overflow: hidden;    /* KUNCI: Mematikan scroll utama agar web terasa seperti aplikasi */
+}
+
+/* ========================================================
+   2. HEADER STUCK (NAVBAR + SOSMED ATAS)
+   ======================================================== */
+.header-stuck {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 480px; /* Standar lebar layar HP container */
+    background-color: #ffffff;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.nav-logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.social-media-top {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Jarak renggang antar-icon */
+    background-color: #ffffff;
+}
+
+.social-icon {
+    font-size: 1.8rem;
+    color: #666666;
+    text-decoration: none;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.social-icon:hover { transform: scale(1.1); }
+.social-icon:nth-child(1):hover { color: #0077b5; } /* LinkedIn Blue */
+.social-icon:nth-child(2):hover { color: #24292e; } /* GitHub Black */
+.social-icon:nth-child(3):hover { color: #e1306c; } /* Instagram Pink */
+
+/* ========================================================
+   3. MENU DROPDOWN NAVIGASI (3 GARIS)
+   ======================================================== */
+.nav-dropdown {
+    position: fixed;
+    top: 110px;
+    width: 100%;
+    max-width: 480px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    z-index: 90;
+    max-height: 0; /* Tersembunyi ke atas secara default */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.nav-dropdown.active {
+    max-height: 250px; /* Menurun ke bawah saat aktif */
+    border-top: 1px solid #f5f5f5;
+}
+
+.menu-item {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    border-bottom: 1px solid #fafafa;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: #f5f5f5;
+}
+
+/* ========================================================
+   4. MAIN CONTAINER & SISTEM LEMBARAN HALAMAN (TAB)
+   ======================================================== */
+.main-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 480px;
+    height: calc(100vh - 110px); /* Mengunci tinggi wadah agar pas sisa layar */
+}
+
+.page-sheet {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: none; /* Sembunyikan semua lembaran halaman secara default */
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Pemicu untuk memunculkan halaman yang aktif via JavaScript */
+.page-sheet.active {
+    display: flex; 
+}
+
+/* ========================================================
+   5. GAYA DESIGN LEMBARAN 1: HOME
+   ======================================================== */
+.photo-section {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-align: center; /* Memastikan foto tetap berada di tengah */
+}
+
+.profile-img {
+    width: 210px;
+    height: 290px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+}
+
+/* Animasi Ketik teks otomatis */
+.dynamic-text-box { 
+    text-align: center; 
+    margin-bottom: 10px; 
+}
+
+.dynamic-text-box h2 { font-size: 1.5rem; }
+.dynamic-text-box h3 { font-weight: 500; color: #555; font-size: 1.1rem; }
+
+.text-animation {
+    color: #007bff;
+    font-weight: 700;
+    border-right: 2px solid #007bff;
+    animation: blink 0.6s step-end infinite;
+    padding-right: 4px;
+}
+
+@keyframes blink { 
+    from, to { border-color: transparent } 50% { border-color: #007bff; } 
+}
+
+.about-short {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.about-short p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #555;
+    text-align: justify;
+}
+
+/* Area tombol bawah penyeimbang (DI-PERBAIKI AGAR TIDAK MENGUNCI SCROLL) */
+.button-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px; /* Mengubah 'auto' menjadi margin normal agar tidak merusak layout */
+}
+
+.action-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #ffffff;
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 15px;
+    padding-bottom: 20px; /* Memberi ruang aman di paling bawah agar tidak mepet */
+}
+#home {
+    overflow-y: auto;
+}
+
+/* ========================================================
+   6. GAYA DESIGN LEMBARAN 2: ABOUT ME (LENGKAP)
+   ======================================================== */
+
+/* Wadah scroll internal khusus untuk halaman About yang panjang */
+.about-container-scroll {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; 
+    padding-right: 5px;
+}
+
+.about-container-scroll::-webkit-scrollbar { width: 4px; }
+.about-container-scroll::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
+
+/* Pembatas blok per informasi besar */
+.about-block {
+    margin-bottom: 35px;
+    width: 100%;
+}
+
+/* HIRARKI VISUAL 1: Judul Utama Informasi */
+.about-block h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 15px;
+    border-left: 4px solid #007bff;
+    padding-left: 10px;
+}
+
+/* Kotak info untuk tempat Education & Experience */
+.info-card {
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    margin-bottom: 12px;
+}
+
+/* HIRARKI VISUAL 2: Sub-judul / Nama Instansi */
+.info-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+/* HIRARKI VISUAL 4: Teks kecil keterangan waktu */
+.info-meta {
+    display: block;
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+/* HIRARKI VISUAL 3: Isi teks deskripsi penjelasan */
+.info-card p, .section-desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+    text-align: justify;
+}
+
+/* STYLE UNTUK BAGIAN SKILLS KE BAWAH */
+.skills-list-vertical {
+    list-style: none;
+    width: 100%;
+}
+
+.skills-list-vertical li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skills-list-vertical li i {
+    color: #28a745; /* Centang warna hijau */
+    font-size: 1rem;
+}
+
+/* STYLE GRID TOOLS 2 KOLOM SESUAI REFERENSI FOTO (KIRI-KANAN) */
+.tools-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 25px 20px; 
+    width: 100%;
+    padding: 10px 0;
+}
+
+.tool-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    gap: 10px; 
+}
+
+.tool-icon-img {
+    font-size: 2.8rem; /* Ukuran icon besar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.tool-card:hover .tool-icon-img {
+    transform: scale(1.1);
+}
+
+.tool-card span {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* STYLE BAGIAN CERTIFICATES MANUAL */
+.certificate-section { text-align: center; }
+.certificate-section h2 { border-left: none; padding-left: 0; }
+.section-desc { text-align: center; margin-bottom: 15px; }
+
+.cert-item-box {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.cert-img-preview {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 5px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+}
+
+.view-cert-link {
+    font-size: 0.85rem;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid #007bff;
+    padding: 5px 15px;
+    border-radius: 15px;
+    transition: all 0.2s;
+}
+.view-cert-link:hover { background-color: #007bff; color: #fff; }
+
+/* STYLE BAGIAN EXPERIENCE YANG KOSONG */
+.empty-experience p {
+    color: #888 !important;
+    font-style: italic;
+    text-align: center !important;
+}
+
+/* ========================================================
+   7. LEMBARAN LAINNYA (PEMANIS HALAMAN KOSONG)
+   ======================================================== */
+.empty-sheet {
+    justify-content: center;
+    background-color: #fafafa;
+}
+
+.empty-sheet h2 { font-size: 1.6rem; color: #007bff; margin-bottom: 10px; }
+.coming-soon { color: #aaa; font-style: italic; }
+/* Aturan tampilan PDF yang tertanam langsung */
+.cert-pdf-view {
+    width: 100%;
+    height: 250px; /* Memberikan tinggi kotak yang pas untuk pratinjau PDF */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+/* Aturan tampilan Foto/PNG agar penuh mengikuti lebar kotak */
+.cert-img-full-view {
+    width: 100%;
+    height: auto; /* Mengikuti rasio asli foto agar tidak gepeng */
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+/* Membuat layout logo di kiri dan teks di kanan */
+.experience-card-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px; /* Jarak antara logo dan teks */
+    padding: 15px;
+}
+
+/* Mengatur ukuran logo perusahaan agar presisi */
+.company-logo {
+    width: 45px;
+    height: 45px;
+    object-fit: contain; /* Memastikan gambar logo tidak gepeng/terpotong */
+    border-radius: 6px;
+    margin-top: 3px;
+}
+
+/* Memastikan detail teks mengambil sisa ruang yang ada */
+.experience-detail {
+    flex: 1;
+}
+/* ========================================================
+   8. GAYA DESIGN LEMBARAN 3: PROJECT
+   ======================================================== */
+
+/* Wadah scroll agar halaman Project aman di-scroll ke bawah */
+.project-container-scroll {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+.project-container-scroll::-webkit-scrollbar { width: 4px; }
+.project-container-scroll::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
+
+.project-main-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Menghilangkan garis bawah bawaan link tag <a> pada kartu */
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin-bottom: 25px;
+}
+
+/* Kotak utama pembungkus per project */
+.project-card {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Efek kartu membesar sedikit saat disentuh/di-klik */
+.project-card-link:hover .project-card {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 75, 255, 0.06);
+    border-color: #007bff;
+}
+
+.no-link-card {
+    margin-bottom: 25px;
+}
+
+/* Pengaturan foto/gambar utama project */
+.project-banner-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Menjaga rasio gambar agar tidak gepeng */
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Area detail teks di dalam kartu */
+.project-info {
+    padding: 15px;
+}
+
+.project-info h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 4px;
+}
+
+/* Teks tag teknologi (KNIME, Python, Flutter, dll) */
+.project-tech {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #007bff;
+    background-color: #ebf5ff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #4a5568;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/* Label penanda link YouTube */
+.watch-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #dc3545; /* Warna merah khas YouTube */
+}
+
+/* Label penanda project non-link */
+.tech-badge-only {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4a5568;
+}
+/* ========================================================
+   9. GAYA DESIGN LEMBARAN 4: CONTACT
+   ======================================================== */
+
+/* Wadah scroll agar halaman kontak aman di layar HP */
+.contact-container-scroll {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+.contact-container-scroll::-webkit-scrollbar { width: 4px; }
+.contact-container-scroll::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
+
+/* Styling Headline Atas */
+.contact-header {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-title-large {
+    font-size: 2.2rem; /* Tulisan gede */
+    font-weight: 800;
+    color: #1a202c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-subtitle-small {
+    font-size: 0.95rem; /* Tulisan kecil bawahnya */
+    color: #718096;
+    margin-top: 2px;
+}
+
+.contact-divider {
+    border: none;
+    border-top: 1px dashed #e2e8f0;
+    margin-bottom: 25px;
+}
+
+/* Styling Bagian Contact Info */
+.contact-info-section {
+    margin-bottom: 30px;
+}
+
+.info-title-large {
+    font-size: 1.4rem; /* Contact Info Gede */
+    font-weight: 700;
+    color: #007bff;
+}
+
+.info-subtitle-small {
+    font-size: 0.85rem; /* Interested with me kecil */
+    color: #a0aec0;
+    margin-bottom: 15px;
+}
+
+.info-list-box {
+    background: #fafafa;
+    border: 1px solid #edf2f7;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.info-item:not(:last-child) {
+    border-bottom: 1px solid #edf2f7;
+}
+
+.info-item i {
+    font-size: 1.2rem;
+    color: #4a5568;
+    width: 25px;
+    text-align: center;
+}
+
+.info-item div {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item span {
+    font-size: 0.75rem;
+    color: #a0aec0;
+    text-transform: uppercase;
+}
+
+.info-item strong {
+    font-size: 0.95rem;
+    color: #2d3748;
+}
+
+/* Styling Bagian Social Media */
+.contact-social-section {
+    margin-bottom: 20px;
+}
+
+.social-title-section {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 15px;
+}
+
+.social-links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Tombol Sosmed List */
+.social-box-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+/* Khusus pembungkus link Instagram agar tetap rapi */
+.social-box-item-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.social-box-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.social-box-left i {
+    font-size: 1.4rem;
+}
+
+.social-box-left span {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.social-username {
+    font-size: 0.85rem;
+    color: #718096;
+    font-weight: 500;
+}
+
+.social-username i {
+    font-size: 0.7rem;
+    margin-left: 3px;
+}
+
+/* Efek Hover Tombol Sosmed */
+.social-box-item:hover {
+    transform: translateX(3px);
+    border-color: #007bff;
+    background-color: #f8faff;
+}
+.social-box-item:hover .social-username {
+    color: #007bff;
+}
+/* Kotak pembungkus info statis (Domisili) */
+.info-item-static {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 5px;
+}
+.info-item-static:not(:last-child) {
+    border-bottom: 1px solid #edf2f7;
+}
+
+/* Tombol info link interaktif (WA & Email) */
+.info-item-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 5px;
+    text-decoration: none; /* Menghilangkan garis bawah link */
+    color: inherit;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+}
+
+.info-item-link:not(:last-child) {
+    border-bottom: 1px solid #edf2f7;
+}
+
+/* Efek sedikit bergeser saat disentuh */
+.info-item-link:hover {
+    background-color: #f8faff;
+    padding-left: 10px;
+}
+
+/* Aturan Icon di dalam Info Box */
+.info-list-box i {
+    font-size: 1.3rem;
+    width: 25px;
+    text-align: center;
+}
+
+.info-text-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-text-flex span {
+    font-size: 0.75rem;
+    color: #a0aec0;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.info-text-flex strong {
+    font-size: 0.95rem;
+    color: #2d3748;
+}
